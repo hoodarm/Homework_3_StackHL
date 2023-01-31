@@ -10,13 +10,16 @@ public class Main {
 
     public static boolean balancedBrackets(String [] input){
         Stack<String> stack = new Stack<>();
+
         for (String x : input) {
             if (x.equals("(") || x.equals("{") || x.equals("[")) {
                 stack.push(x);
                 continue;
             }
+
             if (stack.isEmpty())
                 return false;
+
             String checker;
             switch (x) {
                 case ")" -> {
